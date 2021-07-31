@@ -1,0 +1,121 @@
+:root{
+  --color--card-left: rgba(241, 16, 16, 0.836);
+  --color--text-right: #111520;
+  --color-text-left: #f1f1f1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body{
+  font-family: 'Abel', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(/ressources/images/bg.jpeg) center/cover;
+}
+.container{
+  width: 530px;
+  height: 360px;
+  background: var(--color-text-left);
+  border-radius: 20px;
+}
+.container__content{
+  display: flex;
+}
+/*----------------------le coté gauche-------------------------*/
+.content__left h2{
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-text-left);
+  font-weight: bold;
+}
+.content__left{
+  width: 45%;
+  height: 360px;
+  background: var(--color--card-left);
+  border-radius: 20px 0px 0px 20px;
+}
+.content__right{
+  width: 55%;
+  height: 360px;
+}
+.price{
+  text-align: center;
+  margin-top: 10px;
+  color: var(--color-text-left);
+  font-weight: bold;
+}
+span{
+  font-size: .9em;
+}
+img{
+  margin: 10px;
+  transform: rotate(-10deg);
+}
+
+/*------------------le coté droit---------------------------*/
+.content__right{
+  display: grid;
+  grid-template-columns: repeat(2, 50px);
+  grid-template-rows: repeat(5, 50px);
+}
+.right__card{
+  margin: 20px;
+  color: var(--color--text-right);
+}
+form{
+  display: grid;
+  grid-template-columns: repeat(2, 125px);
+  grid-template-rows: repeat(5, 60px);
+  grid-template-areas: 
+  't1 t1'
+  'i1 i1'
+  'i2 i2'
+  'i3 i4'
+  'bt bt';
+}
+#title{
+  grid-area: t1;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#text{
+  grid-area: i1;
+  border-color: var(--color--card-left);
+}
+#name{
+  grid-area: i2;
+}
+#date{
+  grid-area: i3;
+}
+#tel{
+  grid-area: i4;
+}
+#submit{
+  grid-area: bt;
+  border-radius: 20px;
+  outline: none;
+  background: var(--color--card-left);
+  border: none;
+  letter-spacing: 5px;
+  color: var(--color-text-left);
+  font-size: 1.1em; 
+  cursor: pointer;
+}
+input{
+  margin: 8px;
+  background: transparent;
+  border: 1.8px solid #7a7a7a;
+  font-weight: bold;
+}
+input::placeholder{
+  padding-left: 13px;
+}
